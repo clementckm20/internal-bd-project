@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
+import Search from './Search.js';
+import logo from './logo.jpg';
 import './App.css';
 
 function App() {
@@ -8,16 +9,13 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Type keywords to search for BD projets.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+				<form className="form-inline" action="action_page.php">
+					<input className='search' placeholder='e.g. Agile, Digital Enabler, Richard'/>
+				  <button className='searchbtn' type="submit"><i className="fa fa-search"></i></button>
+				</form>
+				<Search />
       </header>
     </div>
   );

@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 15vmin;
   pointer-events: none;
 }
 
@@ -13,19 +13,54 @@
   }
 }
 
+.search {
+	display: inline-block;
+	width: 30%;
+	height: 40px;
+	font-size: 20px;
+	border-radius: 40px;
+	padding: 10px;
+	border-color: black;
+}
+
+form {
+	width: 100%;
+	padding-right: 30%;
+	padding-left: 30%;
+}
+
+/* Style the submit button */
+.searchbtn {
+	position: absolute;
+	left: 62%;
+  width: 50px;
+  padding: 15px;
+	background: transparent;
+  color: #86BC25;
+  font-size: 28px;
+  border: 1px solid grey;
+  border: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+.result {
+	padding: 50px;
+}
+
+.card {
+	 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  color: black;
 }
 
 @keyframes App-logo-spin {
