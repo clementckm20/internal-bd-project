@@ -1,20 +1,6 @@
 import React from 'react';
 import './App.css';
 import sample from './sample.jpg'
-//
-
-
-// var params = {
-//   query: 'david'
-// };
-// var nextItems = [];
-// csd.search(params, function (err, data) {
-//   if (err) console.log(err, err.stack); // an error occurred
-//   else { // successful response
-//     console.log(JSON.stringify(data));
-//     nextItems = data.hits.hit;
-//   }
-// });
 
 class App extends React.Component {
 	constructor(props) {
@@ -56,19 +42,6 @@ class App extends React.Component {
     this.loadAllObjectsInfo('result')
   }
 
-	// componentDidMount(){
-
-		// const AWS = require('aws-sdk/dist/aws-sdk-full.js');
-		// AWS.config.update({accessKeyId: 'AKIAIHIPPINCCOD4VXMQ', secretAccessKey:'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'});
-		// AWS.config.update({region: 'ap-southeast-2'}); // say us-west-1
-		// console.log(AWS)
-		//
-		// var cloudsearch = new AWS.CloudSearchDomain({ apiVersion: '2013-01-01',endpoint: 'http://search-smart-bd-l5x24yxnt34i22nqehrekmp2qi.ap-southeast-2.cloudsearch.amazonaws.com' });
-		// console.log(cloudsearch)
-
-		// var csd = new AWS.CloudSearchDomain({endpoint: 'http://search-smart-bd-l5x24yxnt34i22nqehrekmp2qi.ap-southeast-2.cloudsearch.amazonaws.com'});
-		// console.log(csd)
-	// }
   render() {
 		console.log(this.state)
 		return (
