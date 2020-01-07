@@ -44,23 +44,32 @@ class App extends React.Component {
 
   render() {
 		console.log(this.state)
+		const test_arr = [0,1,2,3,4,5]
 		return (
 			<div>
-				<p>Result</p>
+				<p className='caption'>Result</p>
 				<div className='result'>
-					<div className='card'>
-						<img src={sample} className="sample" alt="sample" />
-						<div className='card-first'>12 slides</div>
-						<div className='card-element'>File Name:<span>{'ANZ '} {this.state.result.hits.hit[0].fields.proposal_talking_deck}</span></div>
-						<div className='card-element'>Categories:<span>{'Op Model, Transformation'}{this.state.result.hits.hit[0].fields.proposal_talking_deck}</span></div>
-						<div className='card-element'>Industry: <span>Banking</span></div>
-						<div className='card-element'>Owner:<span>David Williams</span></div>
-						<div className='card-element'>Client</div>
-
-						<div className='card-element'>File Path:<span>/Agile/TransformationDeck</span></div>
-						<div className='card-last'><span>12-2-2019</span></div>
-
-					</div>
+				{ test_arr.map((ele)=> {
+					return (
+						<div className="row">
+							<div className='card'>
+								<div className='col-xs-8'>
+									<div className='row'><div className='card-row'>File Name:<span className='card-element'>{'ANZ '}{this.state.result.hits.hit[0].fields.proposal_talking_deck}</span></div></div>
+									<div className='row'><div className='card-row'>Categories:<span className='card-element'>{'Op Model, Transformation'}</span></div></div>
+									<div className='row'><div className='card-row'>Industry:<span className='card-element'>{'Banking'}</span></div></div>
+									<div className='row'><div className='card-row'>Owner:<span className='card-element'>{'David Williams'}</span></div></div>
+									<div className='row'><div className='card-row'>Client:<span className='card-element'>{'ANZ'}</span></div></div>
+									<div className='row'><div className='card-row'>File Path:<span className='card-element'>{'/Agile/TransformationDeck'}</span></div></div>
+								</div>
+								<div className='col-xs-4'>
+									<div className='row'><img src={sample} className="sample" alt="sample" /></div>
+									<div className='row'><span className='card-footer'>Number of slides: 12</span></div>
+									<div className='row'><span className='card-footer'>Created on 12-2-2019</span></div>
+								</div>
+							</div>
+						</div>
+					)
+				})}
 				</div>
 			</div>
 		);

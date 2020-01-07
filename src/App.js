@@ -8,13 +8,17 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <p className='caption'>
           Type keywords to search for BD projets.
         </p>
-				<form className="form-inline" action="action_page.php">
-					<input className='search' placeholder='e.g. Agile, Digital Enabler, Richard'/>
-				  <button className='searchbtn' type="submit"><i className="fa fa-search"></i></button>
-				</form>
+				<div className='row'>
+					<div className='form-box'>
+						<form className="form-inline" action="action_page.php">
+							<div className='col-xs-10'><input className='search' placeholder='e.g. Agile, Digital Enabler, Richard'/></div>
+							<div className='col-xs-2'><button className='searchbtn' type="submit"><i className="fa fa-search"></i></button></div>
+						</form>
+					</div>
+				</div>
 				<Search />
       </header>
     </div>

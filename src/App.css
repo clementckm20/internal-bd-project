@@ -13,28 +13,36 @@
   }
 }
 
+.caption {
+	font-size: 20px;
+}
+
 .search {
 	display: inline-block;
-	width: 30%;
-	height: 40px;
-	font-size: 20px;
-	border-radius: 40px;
+	width: 600px;
+	height: 70px;
+	font-size: 16px;
 	padding: 10px;
-	border-color: black;
+	border: none;
+	background-color: transparent;
+
+}
+
+.form-box {
+	border-radius: 40px;
+	border: 2px black solid;
+	width: 600px;
+	height: 70px;
 }
 
 form {
 	width: 100%;
-	padding-right: 30%;
-	padding-left: 30%;
 }
 
 /* Style the submit button */
 .searchbtn {
-	position: absolute;
-	left: 62%;
   width: 50px;
-  padding: 15px;
+	height: 70px;
 	background: transparent;
   color: #86BC25;
   font-size: 28px;
@@ -44,12 +52,12 @@ form {
 }
 
 .result {
-	width: 500px;
+	width: 600px;
 }
 
 .sample {
-	width: 90px;
-	height: 90px;
+	width: 100%;
+	height: 150px;
 }
 
 .card {
@@ -58,23 +66,23 @@ form {
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.card-element {
+.card-row {
 	float: left;
 	display: block;
-	font-size: 20px;
+	font-size: 16px;
+	padding: 5px;
 }
 
-.card-first {
-	display: block;
-	float: right;
-	font-size: 20px;
+.card-element {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	border-radius: 10px;
+	border: 1px #86BC25 solid;
+	padding: 5px;
+	margin-left: 5px;
 }
 
-
-.card-last {
-	display: block;
-	float: right;
-	font-size: 20px;
+.card-footer {
+	font-size: 16px;
 }
 
 .App-header {
