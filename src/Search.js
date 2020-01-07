@@ -49,10 +49,10 @@ class App extends React.Component {
 			<div>
 				<p className='caption'>Result</p>
 				<div className='result'>
-				{ test_arr.map((ele)=> {
+				{ test_arr.map((i)=> {
 					return (
 						<div className="row">
-							<div className='card'>
+							<div key={i} className='card'>
 								<div className='col-xs-8'>
 									<div className='row'><div className='card-row'>File Name:<span className='card-element'>{'ANZ '}{this.state.result.hits.hit[0].fields.proposal_talking_deck}</span></div></div>
 									<div className='row'><div className='card-row'>Categories:<span className='card-element'>{'Op Model, Transformation'}</span></div></div>
