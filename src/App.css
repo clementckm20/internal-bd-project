@@ -44,13 +44,38 @@ form {
 }
 
 .result {
-	padding: 50px;
+	width: 500px;
+}
+
+.sample {
+	width: 90px;
+	height: 90px;
 }
 
 .card {
-	 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	padding: 20px;
+	overflow: auto;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+.card-element {
+	float: left;
+	display: block;
+	font-size: 20px;
+}
+
+.card-first {
+	display: block;
+	float: right;
+	font-size: 20px;
+}
+
+
+.card-last {
+	display: block;
+	float: right;
+	font-size: 20px;
+}
 
 .App-header {
   background-color: white;
