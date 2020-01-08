@@ -9,17 +9,18 @@ class App extends React.Component {
   	super(props);
 		this.state = {
 			keywords: '',
-			result: [{
-				fields: {
-					created: '',
-					author: '',
-					modified: '',
-					filename: '',
-					content: '',
-					location: '',
-					slide: '',
-				}
-			}]
+			result: [],
+			// result: [{
+			// 	fields: {
+			// 		created: '',
+			// 		author: '',
+			// 		modified: '',
+			// 		filename: '',
+			// 		content: '',
+			// 		location: '',
+			// 		slide: '',
+			// 	}
+			// }]
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.loadAllObjectsInfo = this.loadAllObjectsInfo.bind(this);
