@@ -52,7 +52,7 @@ form {
 }
 
 .result {
-	width: 600px;
+	width: 700px;
 }
 
 .sample {
@@ -67,18 +67,16 @@ form {
 }
 
 .card-row {
-	float: left;
+	text-align: left;
 	display: block;
 	font-size: 16px;
 	padding: 5px;
 }
 
 .card-element {
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	border-radius: 10px;
-	border: 1px #86BC25 solid;
+	color: black;
+	font-weight: 600;
 	padding: 5px;
-	margin-left: 5px;
 }
 
 .card-footer {

@@ -11,13 +11,18 @@ class App extends React.Component {
 			keywords: '',
 			result: [{
 				fields: {
-					proposal_talking_deck: 'test'
+					created: '',
+					author: '',
+					modified: '',
+					filename: '',
+					content: '',
+					location: '',
+					slide: '',
 				}
 			}]
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.loadAllObjectsInfo = this.loadAllObjectsInfo.bind(this);
-		this.parseQuery = this.parseQuery.bind(this);
 	}
 
 	handleChange (evt) {
@@ -26,15 +31,6 @@ class App extends React.Component {
 		this.setState({ [name]: value });
 	}
 
-	parseQuery(queryString) {
-	    var query = {};
-	    var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
-	    for (var i = 0; i < pairs.length; i++) {
-	        var pair = pairs[i].split('=');
-	        query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
-	    }
-	    return query;
-	}
 	// headers set to be Content-Type because of type CORS which makes some headers restricted
 
 
