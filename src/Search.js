@@ -25,7 +25,7 @@ class App extends React.Component {
 								</div>
 								<div className='col-xs-4'>
 									<div className='row'><img src={sample} className="sample" alt="sample" /></div>
-									<div className='row'><span className='card-footer'>{ele.fields.slides}</span></div>
+									<div className='row'><span className='card-footer'>Slide Number:{ele.fields.slide}</span></div>
 									<div className='row'><span className='card-footer'>Created:{ele.fields.created}</span></div>
 									<div className='row'><span className='card-footer'>Modified:{ele.fields.modified}</span></div>
 								</div>
@@ -39,26 +39,5 @@ class App extends React.Component {
   }
 }
 
-//
-// function App() {
-//   return (
-//     <div>
-//       <p>Result</p>
-// 			<div className='result'>
-// 				<div className='card'>
-// 					<div className='card-element'>Proposal</div>
-// 					<div className='card-element'>Categories</div>
-// 					<div className='card-element'>Industry</div>
-// 					<div className='card-element'>Owner</div>
-// 					<div className='card-element'>Client</div>
-// 					<div className='card-element'>Number of Slides</div>
-// 					<div className='card-element'>File Path</div>
-// 					<div className='card-element'>Date</div>
-//
-// 				</div>
-// 			</div>
-//     </div>
-//   );
-// }
 
 export default App;

@@ -49,14 +49,15 @@ class App extends React.Component {
         // },
     };
 
-    let response = await fetch(`https://o2on8l1jcj.execute-api.ap-southeast-2.amazonaws.com/search/?${searchParams.toString()}`, requestOptions);
+    let response = await fetch(`https://o2on8l1jcj.execute-api.ap-southeast-2.amazonaws.com/search/?${searchParams.toString()}&size=100&cursor=initial`, requestOptions);
 
     let data = await response.json();
+		console.log('Replied', data)
     this.setState({ result: data.hits.hit });
   }
 
 	render() {
-		console.log(this.state)
+		// console.log(this.state)
 		return (
 			<div className="App">
 				<header className="App-header">
