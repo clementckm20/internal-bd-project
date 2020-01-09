@@ -11,7 +11,8 @@ class App extends React.Component {
   render() {
 		return (
 			<div>
-				<p className='caption'>{this.props.result.length+' '}Result</p>
+			<br />
+				<p className='caption'>{this.props.result.length+' '}Results</p>
 				<div className='result'>
 				{this.props.result.length <= 1 ?  '' : this.props.result.map((ele,i)=> {
 					return (
