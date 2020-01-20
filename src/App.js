@@ -1,6 +1,5 @@
 import React from 'react';
 import Search from './Search.js';
-import logo from './logo.jpg';
 import './App.css';
 
 
@@ -49,11 +48,12 @@ class App extends React.Component {
         // },
     };
 
-    let response = await fetch(`https://o2on8l1jcj.execute-api.ap-southeast-2.amazonaws.com/search/?${searchParams.toString()}&size=100&cursor=initial`, requestOptions);
+    let response = await fetch(`https://o2on8l1jcj.execute-api.ap-southeast-2.amazonaws.com/search/?${searchParams.toString()}&size=100&cursor=initial&highlight.content=%7B%27%27%7D`, requestOptions);
 
     let data = await response.json();
 		console.log('Replied', data)
     this.setState({ result: data.hits.hit });
+
   }
 
 	render() {
@@ -61,14 +61,14 @@ class App extends React.Component {
 		return (
 			<div className="App">
 				<header className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
+					<h1>Project Athena</h1>
 					<p className='caption'>
-						Type keywords to search for BD projets.
+						Enter keywords below to search for Deloitte assets
 					</p>
 					<div className='row'>
 						<div className='form-box'>
-							<form className="form-inline" action="action_page.php">
-								<div className='col-xs-10'><input name='keywords' onChange={(evt) => this.handleChange(evt)} className='search' placeholder='e.g. Agile, Digital Enabler, Richard'/></div>
+							<form id='searchBox' className="form-inline" action="action_page.php">
+								<div className='col-xs-10'><input name='keywords' onChange={(evt) => this.handleChange(evt)} className='search' placeholder='e.g. Agile, Workday, Art of the Possible'/></div>
 								<div className='col-xs-2'><button onClick={(evt)=>this.loadAllObjectsInfo(evt, this.state.keywords)} className='searchbtn'><i className="fa fa-search"></i></button></div>
 							</form>
 						</div>
