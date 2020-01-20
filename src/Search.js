@@ -11,18 +11,17 @@ class App extends React.Component {
   render() {
 		return (
 			<div>
-			<br />
-				<p className='caption'>{this.props.result.length+' '}Results</p>
-				<div className='result'>
+				<p className='resultcount'>{this.props.result.length+' '}Results</p>
+				<div id='result' className='result'>
 				{this.props.result.length <= 1 ?  '' : this.props.result.map((ele,i)=> {
 					return (
 						<div key={i+'row'} className="row">
 							<div className='card'>
 								<div className='col-xs-8'>
-									<div className='row'><div className='card-row'>File Name:<span className='card-element'>{ele.fields.filename}</span></div></div>
-									<div className='row'><div className='card-row'>Author:<span className='card-element'>{ele.fields.author}</span></div></div>
-									<div className='row'><div className='card-row'>Content:<span><i>{' ' + ele.fields.content}</i></span></div></div>
-									<div className='row'><div className='card-row'>Location:<span>{' ' + ele.fields.location}</span></div></div>
+									<div className='row'><div className='card-row'><strong>File Name:</strong><a href={'file:/' + ele.fields.location + '/' + ele.fields.filename}><span>{' ' + ele.fields.filename}</span></a></div></div>
+									<div className='row'><div className='card-row'><strong>Author:</strong><span>{' ' + ele.fields.author}</span></div></div>
+									<div className='row'><div className='card-row'><strong>Content:</strong><span>{' ' + ele.fields.content}</span></div></div>
+									<div className='row'><div className='card-row'><strong>Location:</strong><span>{' ' + ele.fields.location}</span></div></div>
 								</div>
 								<div className='col-xs-4'>
 									<div className='row'><img src={sample} className="sample" alt="sample" /></div>
