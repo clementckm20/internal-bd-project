@@ -49,7 +49,7 @@ class App extends React.Component {
         // },
     };
 
-    let response = await fetch(`https://o2on8l1jcj.execute-api.ap-southeast-2.amazonaws.com/search/?${searchParams.toString()}&size=100&cursor=initial`, requestOptions);
+    let response = await fetch(`https://o2on8l1jcj.execute-api.ap-southeast-2.amazonaws.com/search/?${searchParams.toString()}&size=5000&cursor=initial`, requestOptions);
 
     let data = await response.json();
 		console.log('Replied', data)
@@ -62,6 +62,9 @@ class App extends React.Component {
 			<div className="App">
 				<header className="App-header">
 					<img src={logo} className="App-logo" alt="logo" />
+					<p className='caption'>
+						<h2>Project Athena</h2>
+					</p>
 					<p className='caption'>
 						Type keywords to search for BD projets.
 					</p>
