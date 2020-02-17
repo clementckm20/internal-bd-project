@@ -1,6 +1,7 @@
 import React from 'react';
 import Search from './Search.js';
 import logo from './logo.jpg';
+import deloitte from './deloitte-white-logo.svg';
 import './App.css';
 
 
@@ -60,24 +61,24 @@ class App extends React.Component {
 		// console.log(this.state)
 		return (
 			<div className="App">
+				<div className='banner'>
+					<img src={deloitte} className="App-logo" alt="logo" />
+				</div>
 				<header className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
-					<p className='caption'>
-						<h2>Project Athena</h2>
-					</p>
-					<p className='caption'>
-						Type keywords to search for BD projets.
+					<h2 className='title'>Project Athena</h2>
+					<p className='subtitle'>
+
 					</p>
 					<div className='row'>
 						<div className='form-box'>
 							<form className="form-inline" action="action_page.php">
-								<div className='col-xs-10'><input name='keywords' onChange={(evt) => this.handleChange(evt)} className='search' placeholder='e.g. Agile, Digital Enabler, Richard'/></div>
+								<div className='col-xs-10'><input name='keywords' onChange={(evt) => this.handleChange(evt)} className='search' placeholder=' Type keywords - e.g. agile, telstra, transformation'/></div>
 								<div className='col-xs-2'><button onClick={(evt)=>this.loadAllObjectsInfo(evt, this.state.keywords)} className='searchbtn'><i className="fa fa-search"></i></button></div>
 							</form>
 						</div>
 					</div>
-					<Search result={this.state.result} />
 				</header>
+				<Search result={this.state.result} />
 			</div>
 		);
 	}

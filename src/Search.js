@@ -15,7 +15,6 @@ class App extends React.Component {
 	}
   render() {
 		var result_arr = []
-		console.log(this.props.result)
 		for (var i=0; i<this.props.result.length; i++){
 			var field_obj = this.props.result[i].fields
 			field_obj["preview"] = <img className='preview-image' src={process.env.PUBLIC_URL + 'images/'+this.props.result[i].fields.filename + '-' + this.props.result[i].fields.slide+'.jpg'}/>
@@ -25,13 +24,30 @@ class App extends React.Component {
 		const columns = [{
 		  dataField: 'preview',
 		  text: 'Preview',
-			headerStyle: { fontSize: '12px', overflowWrap: 'break-word' }
+			headerStyle: { fontSize: '14px', fontStyle: 'Open Sans', overflowWrap: 'break-word', width: '20%' }
 		},{
 		  dataField: 'filename',
 		  text: 'File Name',
 			sort: true,
-			filter: textFilter(),
-			headerStyle: { fontSize: '12px', overflowWrap: 'break-word' }
+			filter: textFilter({
+				placeholder: 'Filename'
+			}),
+			headerStyle: { fontSize: '14px', fontStyle: 'Open Sans', overflowWrap: 'break-word', width: '10%' }
+		},{
+			dataField: 'content',
+			text: 'Content',
+			filter: textFilter({
+				placeholder: 'Any words'
+			}),
+			headerStyle: { fontSize: '14px', width: '20%', fontStyle: 'Open Sans'}
+		},{
+		  dataField: 'author',
+		  text: 'Author',
+			filter: textFilter({
+				placeholder: 'Author'
+			}),
+			sort: true,
+			headerStyle: { fontSize: '14px', width: '10%', fontStyle: 'Open Sans' }
 		},{
 		  dataField: 'created',
 		  text: 'Created',
@@ -41,9 +57,9 @@ class App extends React.Component {
     		withoutEmptyComparatorOption: true,
     		style: { display: 'inline-grid' },
 		    comparatorStyle: { width: '50%'},
-		    dateStyle: { margin: '0px', width: '100%' },
+		    dateStyle: { margin: '0px', width: '100%', fontSize: '12px' },
 			}),
-			headerStyle: { fontSize: '12px' }
+			headerStyle: { fontSize: '14px', fontStyle: 'Open Sans' }
 		},{
 		  dataField: 'modified',
 		  text: 'Modified',
@@ -53,70 +69,40 @@ class App extends React.Component {
     		withoutEmptyComparatorOption: true,
     		style: { display: 'inline-grid' },
 		    comparatorStyle: { width: '50%'},
-		    dateStyle: { margin: '0px', width: '100%' },
+		    dateStyle: { margin: '0px', width: '100%', fontSize: '12px' },
 			}),
-			headerStyle: { fontSize: '12px' }
-		},{
-		  dataField: 'author',
-		  text: 'Author',
-			filter: textFilter(),
-			sort: true,
-			headerStyle: { fontSize: '12px' }
+			headerStyle: { fontSize: '14px', fontStyle: 'Open Sans' }
 		},{
 			dataField: 'slide',
-		  text: 'Slide Number',
-			filter: textFilter(),
+		  text: 'Slide No.',
 			sort: true,
-			headerStyle: { fontSize: '12px' }
-		},{
-			dataField: 'content',
-			text: 'Content',
-			filter: textFilter(),
-			headerStyle: { fontSize: '12px' }
+			headerStyle: { fontSize: '14px', width: '4%', overflowWrap: 'break-word', fontStyle: 'Open Sans' }
 		},{
 			dataField: 'location',
 			text: 'Location',
-			filter: textFilter(),
-			headerStyle: { fontSize: '12px' }
+			filter: textFilter({
+				placeholder: 'Folder name'
+			}),
+			headerStyle: { fontSize: '14px', width: '10%', fontStyle: 'Open Sans' }
 		}];
 
 		return (
 			<div>
-			<br />
-				<p className='caption'>{this.props.result.length+' '}Results</p>
 				<div className='result'>
 					<div className='col-xs-12'>
 						{this.props.result.length <= 1 ? '' :
+							<div>
+							<p className='caption'>{this.props.result.length+' '}Results</p>
 							<BootstrapTable
 								keyField='id'
 								data={ result_arr }
 								columns={ columns }
 								pagination={ paginationFactory() }
 								filter={ filterFactory() }
-								rowStyle={{ fontSize: '10px'}}
-							/>}
+								rowStyle={{ fontSize: '12px', color: 'black', overflowWrap: 'break-word', fontStyle: 'Open Sans' }}
+							/>
+						</div>}
 					</div>
-				{/**this.props.result.length <= 1 ?  '' : this.props.result.map((ele,i)=> {
-					return (
-						<div key={i+'row'} className="row">
-
-							<div className='card'>
-								<div className='col-xs-8'>
-									<div className='row'><div className='card-row'>File Name:<span className='card-element'>{ele.fields.filename}</span></div></div>
-									<div className='row'><div className='card-row'>Author:<span className='card-element'>{ele.fields.author}</span></div></div>
-									<div className='row'><div className='card-row'>Content:<span><i>{' ' + ele.fields.content}</i></span></div></div>
-									<div className='row'><div className='card-row'>Location:<span>{' ' + ele.fields.location}</span></div></div>
-								</div>
-								<div className='col-xs-4'>
-									<div className='row'><img src={sample} className="sample" alt="sample" /></div>
-									<div className='row'><span className='card-footer'>Slide Number:{ele.fields.slide}</span></div>
-									<div className='row'><span className='card-footer'>Created:{ele.fields.created}</span></div>
-									<div className='row'><span className='card-footer'>Modified:{ele.fields.modified}</span></div>
-								</div>
-							</div>
-						</div>
-					)
-				})**/}
 				</div>
 			</div>
 		);
